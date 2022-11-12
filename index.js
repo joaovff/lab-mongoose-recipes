@@ -37,6 +37,10 @@ const manageRecipes = async () => {
       console.log(index.title);
     });
 
+    const title = { title: "Rigatoni alla Genovese" };
+    const updated = await Recipe.findOneAndUpdate(title, { duration: 100 });
+    console.log("Updated!");
+
     await Recipe.deleteOne({ title: "Carrot Cake" });
 
     // Run your code here, after you have insured that the connection was made
