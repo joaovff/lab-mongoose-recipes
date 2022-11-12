@@ -33,7 +33,7 @@ const manageRecipes = async () => {
     console.log(newRecipe.title);
 
     //03:
-    const insertMany = await Recipe.insertMany([...data]);
+    const insertMany = await Recipe.insertMany(data);
 
     insertMany.forEach((index) => {
       console.log(index.title);
