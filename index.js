@@ -19,6 +19,7 @@ const manageRecipes = async () => {
 
     await Recipe.deleteMany();
 
+    //02:
     const newRecipe = await Recipe.create({
       title: "Rice",
       level: "Amateur Chef",
@@ -31,22 +32,26 @@ const manageRecipes = async () => {
     });
     console.log(newRecipe.title);
 
+    //03:
     const insertMany = await Recipe.insertMany([...data]);
 
     insertMany.forEach((index) => {
       console.log(index.title);
     });
 
+    //04:
     const title = { title: "Rigatoni alla Genovese" };
     const updated = await Recipe.findOneAndUpdate(title, { duration: 100 });
     console.log("Updated!");
 
+    //05:
     await Recipe.deleteOne({ title: "Carrot Cake" });
 
     // Run your code here, after you have insured that the connection was made
   } catch (error) {
     console.log(error);
   } finally {
+    // 06:
     await mongoose.connection.close();
     console.log("Connection closed");
   }
