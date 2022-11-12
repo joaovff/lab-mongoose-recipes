@@ -37,7 +37,7 @@ const manageRecipes = async () => {
       console.log(index.title);
     });
 
-    const removing = await Recipe.deleteOne({ title: "Carrot Cake" });
+    await Recipe.deleteOne({ title: "Carrot Cake" });
 
     // Run your code here, after you have insured that the connection was made
   } catch (error) {
